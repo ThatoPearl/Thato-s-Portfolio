@@ -1,7 +1,102 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub pages</p>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS link files -->
+    <link rel="stylesheet" href="portfolio.css">
+
+    <style>
+        /* Additional styles for section transitions */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pinkuser">
+            <nav>
+                <a href="#" class="logo">My Portfolio</a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#skills">Skills & Expertise</a>
+                    <a href="#contacts">Contacts</a>
+                </div>
+            </nav>
+
+            <div class="content">
+                <div class="div-text section active" id="home">
+                    <h1>Hello, my name is Thato Pearl Maenge</h1>
+                    <h4>Computer Science & Software Engineering Student</h4>
+                    <p>I'm a very creative person who enjoys designing and customizing the look and feel of anything I
+                        can get my hands on.
+                        That quite explains why I enjoy front-end web-dev. Also, I have quite the fascination with cloud
+                        and cybersecurity but that's a field I'm still
+                        exploring and learning.</p>
+                </div>
+
+                <div class="div-text section" id="skills">
+                    <h2>Skills & Expertise</h2>
+                    <p></p>
+                    <p> + Skill Set 1: Microsoft Office
+                        Proficient in Word, Outlook, Excel and Powerpoint. Used them previously in
+                        school and individual projects.</p>
+
+                    <p> + Skill Set:2 Languages
+                        C, C++, C#, Java, HTML, CSS, JavaScript
+                    </p>
+
+                    <p>+ Skill Set 3:IDEs
+                        Operated with various environments to build different individual and school
+                        projects.
+                        NetBeans, Codeblocks, Visual Studio 2019, Visual Studio Code and Android Studio.
+                    </p>
+                </div>
+
+                <div class="div-text section" id="contacts">
+                    <p class="card__text">Connect with me: <a href="https://www.linkedin.com/in/thato-maenge-028a20238/" target="_blank">LinkedIn</a></p>
+                    <p class="card__text">Reach me here: <a href="mailto:mthatopearl@gmail.com">Email</a></p>
+                    <p class="card__text">Take a look at my work on github: <a href="https://github.com/ThatoPearl" target="_blank">GitHub</a></p>
+                    
+                </div>
+
+                <div class="div-img">
+                    <img src="pinkuser.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for section switching
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const target = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(target);
+
+                sections.forEach(section => section.classList.remove('active'));
+                targetSection.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
 </html>
